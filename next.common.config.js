@@ -1,6 +1,6 @@
 module.exports = {
 
-	distDir: 'dist',
+	distDir: 'build',
 
 	/* Environment variables */
 	env: {
