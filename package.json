@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "typecheck": "tsc -w",
+    "type-check": "tsc -w",
     "build": "next build",
     "build:stats": "ANALYZE=true yarn build",
     "debug": "NODE_OPTIONS='--inspect' next dev",
