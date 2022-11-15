@@ -3,6 +3,12 @@ const commonConfig = require('./next.common.config');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  // will enable after adding valid strategy in worker/index.ts file
+  disable: false
+  // TODO: understand GenerateSW and injectmanifest (https://www.npmjs.com/package/next-pwa)
+})
 
 
 module.exports = (phase, { defaultConfig }) => {
@@ -25,5 +31,5 @@ module.exports = (phase, { defaultConfig }) => {
     ...environmentConfig,
   }
 
-	return withBundleAnalyzer(nextConfig);
+	return withBundleAnalyzer(withPWA(nextConfig));
 }
