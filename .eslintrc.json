@@ -1,14 +1,23 @@
 {
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "plugins": ["@typescript-eslint"],
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
-    // "airbnb",
+    "airbnb",
+    "airbnb-typescript",
     "prettier"
   ],
   "rules": {
+    "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error"
-    // "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
+    "@typescript-eslint/no-explicit-any": "error",
+    "react/jsx-props-no-spreading": "off",
+    "no-constant-condition": ["error", { "checkLoops": false }],
+    "no-console": ["error", { "allow": ["log", "warn", "error"] }],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-underscore-dangle": ["error"]
   }
 }
